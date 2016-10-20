@@ -31,7 +31,7 @@ int inverseMatrix(double** matrix,  double** inverse,  int size)
 				inverse[j] = swap;
 			}
 
-			if (clone[i][i] != 1)
+			if (clone[i][i] != 1 )
 			{
 				double cons = clone[i][i];
 				
@@ -42,7 +42,7 @@ int inverseMatrix(double** matrix,  double** inverse,  int size)
 				}
 			}
 
-			if (clone[i][i] == 1 && clone[j][i] != 0)
+			if (clone[i][i] == 1 && clone[j][i] != 0 )
 			{
 				double cons = clone[i][i] * fabs(clone[j][i]);
 				
@@ -167,7 +167,7 @@ void nonSingularMatrix(double** matrix, double** identity, int size)
 
 void main()
 {
-	unsigned int k = 4; //message length	
+	unsigned int k = 5; //message length	
 
 	double** S = (double**)malloc(sizeof(double*) * k);
 	double** SInverse = (double**)malloc(sizeof(double*) * k);
@@ -177,15 +177,10 @@ void main()
 		S[i] = (double*)malloc(sizeof(double) * k);
 		SInverse[i] = (double*)malloc(sizeof(double) * k);
 	}
-	/*S[0][0] = 0; S[0][1] = 5; S[0][2] = 6;
-	S[1][0] = 4; S[1][1] = 2; S[1][2] = 1;
-	S[2][0] = 3; S[2][1] = 4; S[2][2] = 8;
 
-	SInverse[0][0] = 1; SInverse[0][1] = 0; SInverse[0][2] = 0;
-	SInverse[1][0] = 0; SInverse[1][1] = 1; SInverse[1][2] = 0;
-	SInverse[2][0] = 0; SInverse[2][1] = 0; SInverse[2][2] = 1;
-*/
+	printf("k : ");	scanf("%d", &k);
 
+	printf("matrix %d by %d", k, k);
 	while (1)
 	{
 		nonSingularMatrix(S, SInverse, k); //generate S
